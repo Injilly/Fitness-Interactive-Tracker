@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness Interactive Tracker</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f5f5f5;
+color:#333;
+}
+
+header{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:30px;
+}
+
+nav{
+background:#1e293b;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+}
+
+nav a{
+color:white;
+padding:15px 20px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+background:#334155;
+}
+
+.hero{
+text-align:center;
+padding:40px 20px;
+background:url("https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b") center/cover;
+color:white;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.container{
+padding:20px;
+max-width:1000px;
+margin:auto;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.card h3{
+margin:15px 0;
+}
+
+button{
+background:#22c55e;
+border:none;
+padding:10px 20px;
+margin-bottom:20px;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#16a34a;
+}
+
+.tracker{
+background:white;
+padding:20px;
+border-radius:10px;
+margin-top:30px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+input{
+padding:10px;
+margin:10px;
+width:150px;
+}
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Fitness Interactive Tracker</h1>
+<p>Track your workouts. Improve your health.</p>
+</header>
+
+<nav>
+<a href="#">Home</a>
+<a href="#workouts">Workouts</a>
+<a href="#tracker">Tracker</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+<h1>Start Your Fitness Journey</h1>
+<p>Stay active and monitor your daily workouts.</p>
+</section>
+
+<div class="container">
+
+<h2 id="workouts">Popular Workouts</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1599058917212-d750089bc07e">
+<h3>Push Ups</h3>
+<p>Build chest and arm strength.</p>
+<button>Start</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1594737625785-a6cbdabd333c">
+<h3>Squats</h3>
+<p>Improve leg power and balance.</p>
+<button>Start</button>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1517964603305-11c0f6f66012">
+<h3>Plank</h3>
+<p>Strengthen your core muscles.</p>
+<button>Start</button>
+</div>
+
+</div>
+
+<div class="tracker" id="tracker">
+<h2>Workout Tracker</h2>
+
+<p>Enter how many minutes you exercised today.</p>
+
+<input type="number" id="minutes" placeholder="Minutes">
+<button onclick="saveWorkout()">Save</button>
+
+<p id="result"></p>
+
+</div>
+
+</div>
+
+<footer id="contact">
+<p>© 2026 Fitness Interactive Tracker</p>
+<p>Stay Healthy 💪</p>
+</footer>
+
+<script>
+
+function saveWorkout(){
+let minutes = document.getElementById("minutes").value;
+
+if(minutes == ""){
+document.getElementById("result").innerHTML="Please enter workout time.";
+return;
+}
+
+document.getElementById("result").innerHTML =
+"Great job! You exercised for " + minutes + " minutes today.";
+
+}
+
+</script>
+
+</body>
+  </html>
